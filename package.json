@@ -1,0 +1,49 @@
+{
+  "name": "dsh-workspace-pin",
+  "description": "DSH web 插件「工作目录自动置顶」：排序菜单新增「会话优先」（当前会话所属工作区自动置顶）；工作区菜单新增「置顶/取消置顶」，置顶工作区进入列表顶部置顶区（分隔线隔开），置顶区内独立手动拖拽排序。",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./lib/index.js",
+  "types": "./lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "types": "./lib/types/client/index.d.ts",
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "README.md"
+  ],
+  "dsh": {
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-sidebar"
+      ],
+      "platform": "web"
+    }
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "@deepseek-ai/dsh-client-locale": "^0.1.0-rc.7",
+    "@deepseek-ai/dsh-client-runtime": "^0.1.0-rc.7",
+    "@deepseek-ai/dsh-client-ui-primitives": "^0.1.0-rc.7",
+    "@deepseek-ai/dsh-client-ui-slots": "^0.1.0-rc.7",
+    "@deepseek-ai/dsh-invariants": "^0.1.0-rc.7",
+    "@deepseek-ai/cordis": "^4.0.1"
+  },
+  "scripts": {
+    "build:client": "echo 'client bundle is maintained as lib/client.js (fork of @deepseek-ai/dsh-client-ui-workspace)'",
+    "build": "echo 'host is a no-op apply; nothing to compile'"
+  }
+}

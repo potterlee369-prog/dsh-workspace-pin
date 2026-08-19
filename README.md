@@ -2,6 +2,8 @@
 
 DSH Web 插件「工作目录自动置顶」：当前会话属于哪个工作区，该工作区就自动置顶。
 
+> 本项目是独立第三方插件，不代表 DeepSeek 官方立场。
+
 ## 功能
 
 - **排序菜单新增「会话优先」**：排序方式中选中「会话优先」后，当前会话所属工作区自动排到列表首位。
@@ -16,7 +18,7 @@ DSH Web 插件「工作目录自动置顶」：当前会话属于哪个工作区
 本插件**接管官方 `@deepseek-ai/dsh-client-ui-workspace`**（两处注册不能并存），需要两步：
 
 1. **注入插件包**（任选其一）：
-   - 开发态（免重启）：`dev_inject_plugin {"dir": "E:/dsh_custom/dsh-workspace-pin"}`，重启后由注入器自动恢复；
+   - 开发态（免重启）：`dev_inject_plugin {"dir": "<plugin-directory>"}`，重启后由注入器自动恢复；
    - 正式装配：`dsh plugin --profile web add <本目录>`。
 2. **禁用官方 ui-workspace**：在 `~/.dsh/profiles/web/cordis.patch.yml` 追加：
 
@@ -51,4 +53,11 @@ DSH Web 插件「工作目录自动置顶」：当前会话属于哪个工作区
 
 ## License
 
-MIT
+MIT。上游代码和打包进客户端 bundle 的第三方代码见
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
+
+## 上游与构建
+
+`lib/client.js` 是基于官方 `@deepseek-ai/dsh-client-ui-workspace`
+`0.1.0-rc.7` 修改后的已生成 bundle。本独立仓库当前不包含上游 TypeScript
+源文件和可复现的 bundle 构建链；发布新版本前应在目标 DSH 版本中完成手动验证。

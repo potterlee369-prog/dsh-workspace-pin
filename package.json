@@ -5,21 +5,19 @@
   "private": true,
   "type": "module",
   "main": "./lib/index.js",
-  "types": "./lib/types/index.d.ts",
   "exports": {
     ".": {
-      "types": "./lib/types/index.d.ts",
       "default": "./lib/index.js"
     },
     "./client": {
-      "types": "./lib/types/client/index.d.ts",
       "default": "./lib/client.js"
     },
     "./package.json": "./package.json"
   },
   "files": [
     "lib",
-    "README.md"
+    "README.md",
+    "THIRD_PARTY_NOTICES.md"
   ],
   "dsh": {
     "client": {
